@@ -5,11 +5,11 @@ URL = 'https://lpf.ro/liga-1'
 page = requests.get(URL)
 soup = BeautifulSoup(page.content, 'html.parser')
 
-results_table =  soup.find(id='clasament_ajax')
-# print(results_table)
+results_table = soup.find(id='clasament_ajax')
+print(results_table)
 
 team_rows = results_table.find_all(class_='echipa_row')
-# print(teams_rows)
+print(team_rows)
 
 teams = []
 
@@ -26,4 +26,4 @@ for team in team_rows:
         'points': team_points,
     })
 
-print(teams)
+# print(teams)
